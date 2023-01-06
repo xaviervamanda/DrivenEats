@@ -1,0 +1,167 @@
+body {
+    background: #E5E5E5;
+}
+
+/* ----------- barra fixa do topo ------------------------------------- */
+
+.barra-topo {
+    width: 614px;
+    height: 92px;
+    background-color: #CF2B2B;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+
+.barra-topo h1 {
+    font-family: 'Righteous';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 55px;
+    letter-spacing: -0.012em;
+    color: #FFFFFF;
+    margin-left: 21px;
+}
+
+.barra-topo h2 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+    margin-left: 21px;
+}
+
+/* ----------- conteudo principal ------------------------------------ */ 
+
+.container {
+    margin-top: 27px;
+    height: 100%;
+    width: 595px;
+    background-color: #E5E5E5;
+    margin-left: 19px;
+    
+}
+
+.margem {
+    margin-top: 123px;    
+}
+
+
+
+h3 {
+    font-family: 'Righteous';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 32px;
+    letter-spacing: 0.018em;
+    color: #333333;
+}
+
+.infosDaOpcao {
+    width: 172px;
+    height: 216px;
+    background-color: #FFFFFF;
+    margin-top: 17px;
+    border-radius: 9px;
+    margin-right: 15px;
+}
+
+.infosDaOpcao img {
+    width: 144px;
+    height: 87px;
+    margin-left: 14px;
+    margin-right: 14px;
+    margin-top: 18px;
+}
+
+.infosDaOpcao p {
+    margin-left: 14px;
+}
+
+.nome {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    color: #333333;
+    margin-top: 8px;
+    
+}
+
+.descricao {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 18px;
+    color: #A6A6A6;
+    margin-top: 4px;
+    
+}
+
+.preco {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+    margin-top: 5px;
+    
+}
+
+.todas-opcoes-disponiveis {
+    display: flex;
+    overflow-x: scroll;
+}
+
+.margem2 {
+    margin-bottom: 108px;
+}
+
+/* -------------------- barra fixa de baixo -----------------------------*/
+
+.barra-baixo {
+    width: 614px;
+    height: 92px;
+    background-color: #FFFFFF;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+}
+
+.barra-baixo div {
+    width: 364px;
+    height: 61px; 
+}
+
+.barra-baixo button {
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.018em;
+    color: #FFFFFF;
+    background-color: #CBCBCB;
+    border: 0px;
+
+}
