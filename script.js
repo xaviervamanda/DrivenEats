@@ -107,11 +107,7 @@ function calculaPrecoTotal (){
     const arry = totalArred.split ('');
     const arrVazio = [];
     for (i=0; i < arry.length; i++) {
-        if (arry[i] === "."){
-            arrVazio.push (arry[i]);
-        } else {
-            arrVazio.push (arry[i]);
-        }
+        arrVazio.push (arry[i]);
     }
     totalFinal = "R$" + arrVazio.join("");
     document.querySelector('.preco-total').innerHTML = totalFinal;
