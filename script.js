@@ -66,7 +66,7 @@ function selecionaOpcaoSobremesa (itemS) {
 
 function verificaTodosItensSelecionados () {
     if (nomePrato !== undefined && nomeBebida !== undefined && nomeSobremesa !== undefined){
-        let botaoFecharPedido = document.querySelector('.botao-fechar-pedido');
+        const botaoFecharPedido = document.querySelector('.botao-fechar-pedido');
         botaoFecharPedido.disabled = false;
         botaoFecharPedido.classList.remove ('cor-fundo-antes');
         botaoFecharPedido.classList.add ('cor-fundo-depois');
@@ -86,7 +86,7 @@ function transformaPrecoEmNumero (preco) {
             arrFinal.push(".");
         }
     }
-    let str = arrFinal.join("");
+    const str = arrFinal.join("");
     return Number(str)
 }
 
