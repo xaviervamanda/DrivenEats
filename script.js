@@ -1,15 +1,14 @@
-
 let nomePrato;
 let precoPrato;
 
 function selecionaOpcaoPrato (itemP) {
     const itemSelecionadoAnt = document.querySelector ('.prato .selecionado');
     
-    let prato = itemP.querySelector('.nome');
+    const prato = itemP.querySelector('.nome');
     nomePrato = prato.innerHTML;
     
 
-    let preco = itemP.querySelector('.preco');
+    const preco = itemP.querySelector('.preco');
     precoPrato = preco.innerHTML;
     
 
@@ -21,18 +20,17 @@ function selecionaOpcaoPrato (itemP) {
     verificaTodosItensSelecionados ();
 }
 
-
-let nomeBebida
+let nomeBebida;
 let precoBebida;
 
 function selecionaOpcaoBebida (itemB) {
     const itemSelecionadoAnt = document.querySelector ('.bebida .selecionado');
     
-    let bebida = itemB.querySelector('.nome');
+    const bebida = itemB.querySelector('.nome');
     nomeBebida = bebida.innerHTML;
     
 
-    let preco = itemB.querySelector('.preco');
+    const preco = itemB.querySelector('.preco');
     precoBebida = preco.innerHTML;
 
     if (itemSelecionadoAnt != null){
@@ -42,9 +40,8 @@ function selecionaOpcaoBebida (itemB) {
 }
     itemB.classList.add ('selecionado');
     
-    verificaTodosItensSelecionados ()
+    verificaTodosItensSelecionados ();
 }
-
 
 let nomeSobremesa;
 let precoSobremesa;
@@ -52,11 +49,11 @@ let precoSobremesa;
 function selecionaOpcaoSobremesa (itemS) {
     const itemSelecionadoAnt = document.querySelector ('.sobremesa .selecionado');
     
-    let sobremesa = itemS.querySelector('.nome');
+    const sobremesa = itemS.querySelector('.nome');
     nomeSobremesa = sobremesa.innerHTML;
     
 
-    let preco = itemS.querySelector('.preco');
+    const preco = itemS.querySelector('.preco');
     precoSobremesa = preco.innerHTML;
 
     if (itemSelecionadoAnt != null){
@@ -67,13 +64,11 @@ function selecionaOpcaoSobremesa (itemS) {
     verificaTodosItensSelecionados ()
 }
 
-
-
 function verificaTodosItensSelecionados () {
     if (nomePrato !== undefined){
         if (nomeBebida !== undefined){
             if (nomeSobremesa !== undefined){
-                botaoFecharPedido = document.querySelector('.botao-fechar-pedido');
+                let botaoFecharPedido = document.querySelector('.botao-fechar-pedido');
                 botaoFecharPedido.disabled = false;
                 botaoFecharPedido.classList.remove ('cor-fundo-antes');
                 botaoFecharPedido.classList.add ('cor-fundo-depois');
@@ -84,10 +79,10 @@ function verificaTodosItensSelecionados () {
 }
 
 function transformaPrecoEmNumero (preco) {
-    let arr = preco.split ('');
-    let numeros = ["0","1","2","3","4","5","6","7","8","9"];
-    let arrFinal = [];
-    for (i=0; i < arr.length; i++){
+    const arr = preco.split ('');
+    const numeros = ["0","1","2","3","4","5","6","7","8","9"];
+    const arrFinal = [];
+    for (let i=0; i < arr.length; i++){
         if (numeros.includes(arr[i]) === true){
             arrFinal.push(arr[i]);
         }
@@ -96,43 +91,43 @@ function transformaPrecoEmNumero (preco) {
         }
     }
     let str = arrFinal.join("");
-    let valor = Number(str);
-    return valor
+    return Number(str)
 }
 
 
 let totalFinal;
 
 function calculaPrecoTotal (){
-    let valorPrato = transformaPrecoEmNumero (precoPrato);
-    let valorBebida = transformaPrecoEmNumero (precoBebida);
-    let valorSobremesa = transformaPrecoEmNumero (precoSobremesa);
-    let total = valorPrato + valorBebida + valorSobremesa;
-    let totalArred = total.toFixed(2)
-    let arry = totalArred.split ('');
-    let arrVazio = [];
+    const valorPrato = transformaPrecoEmNumero (precoPrato);
+    const valorBebida = transformaPrecoEmNumero (precoBebida);
+    const valorSobremesa = transformaPrecoEmNumero (precoSobremesa);
+    const total = valorPrato + valorBebida + valorSobremesa;
+    const numeroCasasDecimais = 2;
+    const totalArred = total.toFixed(numeroCasasDecimais);
+    const arry = totalArred.split ('');
+    const arrVazio = [];
     for (i=0; i < arry.length; i++) {
         if (arry[i] === "."){
-            arrVazio.push (",");
+            arrVazio.push (arry[i]);
         } else {
             arrVazio.push (arry[i]);
         }
     }
     totalFinal = "R$" + arrVazio.join("");
-    document.querySelector('.preco-total').innerHTML = totalFinal
+    document.querySelector('.preco-total').innerHTML = totalFinal;
     
 }
 function fecharPedido () {
     const fechaPedido = document.querySelector ('.container-fechar-pedido');
     fechaPedido.classList.remove ('escondido');
-    document.querySelector('.nome-prato').innerHTML = nomePrato
-    document.querySelector('.preco-prato').innerHTML = precoPrato
-    document.querySelector('.nome-bebida').innerHTML = nomeBebida
-    document.querySelector('.preco-bebida').innerHTML = precoBebida
-    document.querySelector('.nome-sobremesa').innerHTML = nomeSobremesa
-    document.querySelector('.preco-sobremesa').innerHTML = precoSobremesa
+    document.querySelector('.nome-prato').innerHTML = nomePrato;
+    document.querySelector('.preco-prato').innerHTML = precoPrato;
+    document.querySelector('.nome-bebida').innerHTML = nomeBebida;
+    document.querySelector('.preco-bebida').innerHTML = precoBebida;
+    document.querySelector('.nome-sobremesa').innerHTML = nomeSobremesa;
+    document.querySelector('.preco-sobremesa').innerHTML = precoSobremesa;
     calculaPrecoTotal ();
-    document.querySelector('.preco-total').innerHTML = totalFinal
+    document.querySelector('.preco-total').innerHTML = totalFinal;
 }
 
 let nome;
@@ -154,9 +149,7 @@ function cancelarPedido () {
 }
 
 function mandaPedidoWpp () {
-    let pedido = 
-    `Olá, gostaria de fazer o pedido:
-    
+    let pedido = `Olá, gostaria de fazer o pedido:
     - Prato: ${nomePrato}
     - Bebida: ${nomeBebida}
     - Sobremesa ${nomeSobremesa}
