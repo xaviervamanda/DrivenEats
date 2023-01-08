@@ -7,7 +7,7 @@ body {
 /* ----------- barra fixa do topo ------------------------------------- */
 
 .barra-topo {
-    width: 614px;
+    width: 414px;
     height: 92px;
     background-color: #CF2B2B;
     display: flex;
@@ -17,6 +17,7 @@ body {
     top: 0px;
     left: 0px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    z-index: 1;
 
 }
 
@@ -46,7 +47,7 @@ body {
 .container {
     margin-top: 27px;
     height: 100%;
-    width: 595px;
+    width: 395px;
     background-color: #E5E5E5;
     margin-left: 19px;
     
@@ -136,7 +137,7 @@ h3 {
 /* -------------------- barra fixa de baixo -----------------------------*/
 
 .barra-baixo {
-    width: 614px;
+    width: 414px;
     height: 92px;
     background-color: #FFFFFF;
     
@@ -165,11 +166,15 @@ h3 {
     text-align: center;
     letter-spacing: 0.018em;
     color: #FFFFFF;
-    background-color: #CBCBCB;
     border: 0px;
-
 }
 
+.cor-fundo-depois {
+    background-color: #32B72F;
+}
+.cor-fundo-antes {
+    background-color: #CBCBCB;  
+}
 /* ------------------------------ seleção de itens ------------------------------ */
 
 
@@ -190,11 +195,123 @@ h3 {
     font-size: 120%;
     color: #32B72F;
     position: absolute;
-    bottom: 10px;
-    right: 10px;
+    bottom: 5px;
+    right: 5px;
     display: none;
 }
 
 .selecionado .icone {
     display: initial;
 }
+
+/* ------------------------ página fechar pedido -----------------------*/
+
+.container-fechar-pedido {
+    width: 414px;
+    height: 1026px;
+    background-color: rgba(255, 255, 255, 0.9);
+    position: fixed;
+    top:0px;
+    left:0px;
+    z-index: 2;
+}
+
+.fechar-pedido {
+    width: 377px;
+    height: 353px;
+    background: #50D074;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.25);
+    border-radius: 9px;
+    position: absolute;
+    bottom:42%;
+    left: 19px;
+}
+
+.confirmacao {
+    position: absolute;
+    width: 376px;
+    height: 27px;
+    left: 0px;
+    top: 17px;
+}
+
+.confirmacao p {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 26px;
+    text-align: center;
+    color: #FFFFFF;
+
+
+}
+
+.escondido {
+    display: none;
+}
+
+.itens-selecionados-mensagem div {
+    width: 326px;
+    margin-left: 26px;
+    margin-bottom: 13px;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 26px;
+    letter-spacing: 0.018em;
+    color: #FFFFFF;
+}
+
+.negrito p {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 26px;
+    letter-spacing: 0.018em;
+}
+
+.margem-cima {
+    margin-top: 76px;
+}
+
+
+
+.pode-pedir {
+    width: 329px;
+    height: 52px;
+    background: #FFFFFF;
+    border-radius: 100px;
+    border: 0px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 26px;
+    text-align: center;
+    letter-spacing: 0.018em;
+    color: #50D074;
+    margin-top: 3px;
+}
+
+.cancelar-pedido {
+    width: 333px;
+    height: 52px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.018em;
+    color: #FFFFFF;
+    background: #50D074;
+    border: 0px;
+    
+}
+
+

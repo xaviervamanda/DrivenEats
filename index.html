@@ -2,6 +2,7 @@
 <html lang="pt-br">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="estilos.css">
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
@@ -172,8 +173,49 @@
 
     <div class="barra-baixo">
       <div>
-        <button data-test="order-btn" disabled>Selecione os 3 itens<br> para fechar o pedido</button>
+        <!-- colocar disabled no botão -->
+        <button data-test="order-btn" class="botao-fechar-pedido cor-fundo-antes" onclick = "fecharPedido ()" disabled>Selecione os 3 itens<br> para fechar o pedido</button>
       </div>   
+    </div>
+
+    <div class="container-fechar-pedido escondido">
+      <div data-test="confirm-order-modal" class="fechar-pedido">
+        <div class="confirmacao">
+          <p>Confirme seu pedido</p>
+        </div>
+        <div class="itens-selecionados-mensagem">
+
+          <div class="margem-cima">
+            <p class="nome-prato">Frango</p>
+            <p class="preco-prato">R$14,90</p>
+          </div>
+
+          <div>
+            <p class="nome-bebida">Frango Assado</p>
+            <p class="preco-bebida">R$14</p>
+          </div>
+
+          <div>
+            <p class="nome-sobremesa">Frango Assado</p>
+            <p class="preco-sobremesa">R$14</p>
+          </div>
+
+          <div class="negrito">
+            <p>TOTAL</p>
+            <p class="preco-total">R$14</p>
+          </div>
+
+          <div>
+            <button data-test="confirm-order-btn" class="pode-pedir" onclick="mandaPedidoWpp ()" >Tudo certo, pode pedir!</button>
+          </div>
+
+          <div>
+            <button data-test="cancel-order-btn" class="cancelar-pedido" onclick="cancelarPedido ()">Cancelar</button>
+          </div>
+
+        </div>
+
+      </div>
     </div>
 
     
