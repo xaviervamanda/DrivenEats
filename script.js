@@ -65,17 +65,13 @@ function selecionaOpcaoSobremesa (itemS) {
 }
 
 function verificaTodosItensSelecionados () {
-    if (nomePrato !== undefined){
-        if (nomeBebida !== undefined){
-            if (nomeSobremesa !== undefined){
-                let botaoFecharPedido = document.querySelector('.botao-fechar-pedido');
-                botaoFecharPedido.disabled = false;
-                botaoFecharPedido.classList.remove ('cor-fundo-antes');
-                botaoFecharPedido.classList.add ('cor-fundo-depois');
-                botaoFecharPedido.innerHTML = "Fechar pedido";
-            }
-        }
-    }
+    if (nomePrato !== undefined && nomeBebida !== undefined && nomeSobremesa !== undefined){
+        let botaoFecharPedido = document.querySelector('.botao-fechar-pedido');
+        botaoFecharPedido.disabled = false;
+        botaoFecharPedido.classList.remove ('cor-fundo-antes');
+        botaoFecharPedido.classList.add ('cor-fundo-depois');
+        botaoFecharPedido.innerHTML = "Fechar pedido";
+}
 }
 
 function transformaPrecoEmNumero (preco) {
@@ -106,7 +102,7 @@ function calculaPrecoTotal (){
     const totalArred = total.toFixed(numeroCasasDecimais);
     const arry = totalArred.split ('');
     const arrVazio = [];
-    for (i=0; i < arry.length; i++) {
+    for (let i=0; i < arry.length; i++) {
         arrVazio.push (arry[i]);
     }
     totalFinal = "R$" + arrVazio.join("");
