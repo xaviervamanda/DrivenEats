@@ -151,7 +151,15 @@ function cancelarPedido () {
 }
 
 function mandaPedidoWpp () {
-    let pedido = `Olá, gostaria de fazer o pedido:\n- Prato: ${nomePrato}\n- Bebida: ${nomeBebida}\n- Sobremesa ${nomeSobremesa}\nTotal: ${totalFinal}\n\nNome: ${nome}\nEndereço: ${endereco}`;
+    let pedido = `
+Olá, gostaria de fazer o pedido:
+- Prato: ${nomePrato}
+- Bebida: ${nomeBebida}
+- Sobremesa ${nomeSobremesa}
+Total: ${totalFinal}
+
+Nome: ${nome}
+Endereço: ${endereco}`;
 
     pedido = window.encodeURIComponent(pedido);
     window.open("https://wa.me/5521994797262?text=" + pedido);
