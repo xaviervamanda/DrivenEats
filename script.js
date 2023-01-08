@@ -92,6 +92,7 @@ function transformaPrecoEmNumero (preco) {
 
 
 let totalFinal;
+let totalFinalContainer;
 
 function calculaPrecoTotal (){
     const valorPrato = transformaPrecoEmNumero (precoPrato);
@@ -102,11 +103,20 @@ function calculaPrecoTotal (){
     const totalArred = total.toFixed(numeroCasasDecimais);
     const arry = totalArred.split ('');
     const arrVazio = [];
+    const arrVazioContainer = [];
     for (let i=0; i < arry.length; i++) {
-        arrVazio.push (arry[i]);
+        if (arry[i] === "."){
+            arrVazioContainer.push (",");
+            arrVazio.push(arry[i]);
+        } else {
+            arrVazio.push (arry[i]);
+            arrVazioContainer.push (arry[i]);
+        }
+        
     }
+    totalFinalContainer = "R$" + arrVazioContainer.join("");
     totalFinal = "R$" + arrVazio.join("");
-    document.querySelector('.preco-total').innerHTML = totalFinal;
+    document.querySelector('.preco-total').innerHTML = totalFinalContainer;
     
 }
 function fecharPedido () {
@@ -119,7 +129,7 @@ function fecharPedido () {
     document.querySelector('.nome-sobremesa').innerHTML = nomeSobremesa;
     document.querySelector('.preco-sobremesa').innerHTML = precoSobremesa;
     calculaPrecoTotal ();
-    document.querySelector('.preco-total').innerHTML = totalFinal;
+    document.querySelector('.preco-total').innerHTML = totalFinalContainer;
 }
 
 let nome;
@@ -141,14 +151,7 @@ function cancelarPedido () {
 }
 
 function mandaPedidoWpp () {
-    let pedido = `Olá, gostaria de fazer o pedido:
-    - Prato: ${nomePrato}
-    - Bebida: ${nomeBebida}
-    - Sobremesa ${nomeSobremesa}
-    Total: ${totalFinal}
-    
-    Nome: ${nome}
-    Endereço: ${endereco}`;
+    let pedido = `Olá, gostaria de fazer o pedido:\n- Prato: ${nomePrato}\n- Bebida: ${nomeBebida}\n- Sobremesa ${nomeSobremesa}\nTotal: ${totalFinal}\n\nNome: ${nome}\nEndereço: ${endereco}`;
 
     pedido = window.encodeURIComponent(pedido);
     window.open("https://wa.me/5521994797262?text=" + pedido);
