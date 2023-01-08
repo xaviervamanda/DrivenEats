@@ -150,6 +150,10 @@ function cancelarPedido () {
     fechaPedido.classList.add ('escondido');
 }
 
+
+/* não está dando certo no HUB avaliador
+
+
 function mandaPedidoWpp () {
     let pedido = `Olá, gostaria de fazer o pedido:
 - Prato: ${nomePrato}
@@ -163,6 +167,13 @@ Endereço: ${endereco}`;
     pedido = window.encodeURIComponent(pedido);
     window.open("https://wa.me/5521994797262?text=" + pedido);
 }
+
+*/
+
+function mandaPedidoWpp () {
+    window.open("https://wa.me/5521994797262?text=Olá,%20gostaria%20de%20fazer%20o%20pedido:%0A-%20Prato:%20" + nomePrato + "%0A-%20Bebida:%20" + nomeBebida + "%0A-%20Sobremesa:%20" + nomeSobremesa + "%0ATotal:%20" + totalFinal + "%0A%0ANome:%20" + nome + "%0AEndereço:%20" + endereco);
+}
+
 
 
 
