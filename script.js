@@ -135,6 +135,19 @@ function fecharPedido () {
     document.querySelector('.preco-total').innerHTML = totalFinal
 }
 
+let nome;
+let endereco;
+
+function nomeEndereco (){
+    nome = prompt("Digite seu nome abaixo:");
+    endereco = prompt ("Digite seu endereço abaixo (nome da rua e número):");
+}
+
+function executaDuasFuncoes (){
+    nomeEndereco ();
+    fecharPedido ();
+}
+
 function cancelarPedido () {
     const fechaPedido = document.querySelector ('.container-fechar-pedido');
     fechaPedido.classList.add ('escondido');
@@ -143,10 +156,14 @@ function cancelarPedido () {
 function mandaPedidoWpp () {
     let pedido = 
     `Olá, gostaria de fazer o pedido:
+    
     - Prato: ${nomePrato}
     - Bebida: ${nomeBebida}
     - Sobremesa ${nomeSobremesa}
-    Total: ${totalFinal}`;
+    Total: ${totalFinal}
+    
+    Nome: ${nome}
+    Endereço: ${endereco}`;
 
     pedido = window.encodeURIComponent(pedido);
     window.open("https://wa.me/5521994797262?text=" + pedido);
