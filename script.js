@@ -155,12 +155,11 @@ function cancelarPedido () {
 
 function mandaPedidoWpp () {
     let pedido =`
-Olá, gostaria de fazer o pedido:\n
+Olá, gostaria de fazer o pedido:
 - Prato: ${nomePrato}
 - Bebida: ${nomeBebida}
-- Sobremesa ${nomeSobremesa}\n
-Total: ${totalFinalContainer}
-
+- Sobremesa: ${nomeSobremesa}\n
+Total: ${totalFinalContainer}\n
 Nome: ${nome}\n
 Endereço: ${endereco}
 `;
