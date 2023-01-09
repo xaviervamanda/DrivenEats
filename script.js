@@ -157,10 +157,10 @@ function mandaPedidoWpp () {
     let pedido = `Olá, gostaria de fazer o pedido:
 - Prato: ${nomePrato}
 - Bebida: ${nomeBebida}
-- Sobremesa ${nomeSobremesa}
+- Sobremesa ${nomeSobremesa}\n
 Total: ${totalFinal}
 
-Nome: ${nome}
+Nome: ${nome}\n
 Endereço: ${endereco}`;
 
     pedido = window.encodeURIComponent(pedido);
