@@ -161,7 +161,7 @@ Olá, gostaria de fazer o pedido:\n
 - Sobremesa ${nomeSobremesa}\n
 Total: ${totalFinalContainer}
 
-Nome: ${nome}
+Nome: ${nome}\n
 Endereço: ${endereco}
 `;
 
