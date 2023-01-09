@@ -154,15 +154,14 @@ function cancelarPedido () {
 /* não está dando certo no HUB avaliador */
 
 function mandaPedidoWpp () {
-    let pedido =`
-Olá, gostaria de fazer o pedido:
+    let pedido =`Olá, gostaria de fazer o pedido:
 - Prato: ${nomePrato}
 - Bebida: ${nomeBebida}
-- Sobremesa: ${nomeSobremesa}\n
-Total: ${totalFinalContainer}\n
-Nome: ${nome}\n
-Endereço: ${endereco}
-`;
+- Sobremesa: ${nomeSobremesa}
+Total: ${totalFinalContainer}
+
+Nome: ${nome}
+Endereço: ${endereco}`;
 
     pedido = window.encodeURIComponent(pedido);
     window.open("https://wa.me/5521994797262?text=" + pedido);
