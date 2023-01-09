@@ -114,7 +114,7 @@ function calculaPrecoTotal (){
         }
         
     }
-    totalFinalContainer = "R$" + arrVazioContainer.join("");
+    totalFinalContainer = "R$ " + arrVazioContainer.join("");
     totalFinal = "R$" + arrVazio.join("");
     document.querySelector('.preco-total').innerHTML = totalFinalContainer;
     
