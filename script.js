@@ -1,5 +1,12 @@
 let nomePrato;
 let precoPrato;
+let nome;
+let endereco;
+let nomeBebida;
+let precoBebida;
+let nomeSobremesa;
+let precoSobremesa;
+let totalFinalContainer;
 
 function selecionaOpcaoPrato (itemP) {
     const itemSelecionadoAnt = document.querySelector ('.prato .selecionado');
@@ -20,8 +27,6 @@ function selecionaOpcaoPrato (itemP) {
     verificaTodosItensSelecionados ();
 }
 
-let nomeBebida;
-let precoBebida;
 
 function selecionaOpcaoBebida (itemB) {
     const itemSelecionadoAnt = document.querySelector ('.bebida .selecionado');
@@ -43,8 +48,7 @@ function selecionaOpcaoBebida (itemB) {
     verificaTodosItensSelecionados ();
 }
 
-let nomeSobremesa;
-let precoSobremesa;
+;
 
 function selecionaOpcaoSobremesa (itemS) {
     const itemSelecionadoAnt = document.querySelector ('.sobremesa .selecionado');
@@ -91,8 +95,6 @@ function transformaPrecoEmNumero (preco) {
 }
 
 
-let totalFinal;
-let totalFinalContainer;
 
 function calculaPrecoTotal (){
     const valorPrato = transformaPrecoEmNumero (precoPrato);
@@ -102,20 +104,16 @@ function calculaPrecoTotal (){
     const numeroCasasDecimais = 2;
     const totalArred = total.toFixed(numeroCasasDecimais);
     const arry = totalArred.split ('');
-    const arrVazio = [];
     const arrVazioContainer = [];
     for (let i=0; i < arry.length; i++) {
         if (arry[i] === "."){
             arrVazioContainer.push (",");
-            arrVazio.push(arry[i]);
         } else {
-            arrVazio.push (arry[i]);
             arrVazioContainer.push (arry[i]);
         }
         
     }
     totalFinalContainer = "R$ " + arrVazioContainer.join("");
-    totalFinal = "R$" + arrVazio.join("");
     document.querySelector('.preco-total').innerHTML = totalFinalContainer;
     
 }
@@ -132,8 +130,7 @@ function fecharPedido () {
     document.querySelector('.preco-total').innerHTML = totalFinalContainer;
 }
 
-let nome;
-let endereco;
+
 
 function nomeEndereco (){
     nome = prompt("Digite seu nome abaixo:");
@@ -166,16 +163,6 @@ Endereço: ${endereco}`;
     pedido = window.encodeURIComponent(pedido);
     window.open("https://wa.me/5521994797262?text=" + pedido);
 }
-
-
-
-/* Essa também não deu certo no HUB
-
-function mandaPedidoWpp () {
-    window.open("https://wa.me/5521994797262?text=Olá,%20gostaria%20de%20fazer%20o%20pedido:%0A-%20Prato:%20" + nomePrato + "%0A-%20Bebida:%20" + nomeBebida + "%0A-%20Sobremesa:%20" + nomeSobremesa + "%0ATotal:%20" + totalFinal + "%0A%0ANome:%20" + nome + "%0AEndereço:%20" + endereco);
-}
-
-*/
 
 
 
